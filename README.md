@@ -1,7 +1,7 @@
 
 # Currency Converter
 
-React + Python app that help you with converting money from one currency to another. 
+React + Python app that helps you with converting money from one currency to another. 
 
 
 
