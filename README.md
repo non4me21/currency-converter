@@ -18,7 +18,7 @@ To install frontend:
 To install backend:
 ```bash
   cd nbp-api
-  pip install -r requirements.txt
+  pip3 install -r requirements.txt
 ```
 ## Run Locally
 
