@@ -1,0 +1,114 @@
+@font-face {
+  font-family: 'TitleFont';
+  src: url('./static/DMSerifDisplay-Regular.woff')
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translate(0, 80px) scale(0.5) ;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity:1;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translate(0, -20px);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.App {
+  animation: 1s ease-out 1 slideDown;
+  z-index: 10;
+  background-color: white;
+  padding: 30px;
+  border-radius: 30px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+  -webkit-box-shadow: 8px 14px 38px -4px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 14px 38px -4px rgba(66, 68, 90, 1);
+  box-shadow: 8px 14px 38px -4px rgba(66, 68, 90, 1);
+}
+
+.main-text {
+  animation: 1s ease-out 1 slideUp;
+  position: relative;
+  opacity: 1;
+  font-size: 50px;
+  font-family: TitleFont, Arial, Helvetica, sans-serif;
+  color: white;
+  text-shadow: 4px 4px 6px rgba(3, 3, 3, 1);
+}
+
+.rate-info-wrapper {
+  height: 10px;
+  text-align: center;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.rate-info-wrapper:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.rate-info {
+  font-size: 10px;
+  bottom: 8px;
+  position: relative;
+}
+
+.loader {
+  color: rgb(0, 102, 255);
+  position: relative;
+  bottom: 10px;
+  scale: 0.5;
+  width: 60px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side,rgb(16, 116, 231) 90%,#0000);
+  background: 
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
+}
+
