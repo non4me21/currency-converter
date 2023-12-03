@@ -15,7 +15,7 @@ const regex = /^[\d.]*$/;
 
 const getData = async (value: string, fromCurrency: string, toCurency: string) => {
   const searchParams = new URLSearchParams({from_curr: fromCurrency, to_curr: toCurency, value});
-  let response = await fetch(apiUrl.concat(searchParams.toString()))
+  const response = await fetch(apiUrl.concat(searchParams.toString()))
   return response
 }
 
