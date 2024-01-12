@@ -13,7 +13,6 @@ interface InputOwnProps {
 const CurrencyInput: React.FC<InputOwnProps> = (props) => {
     const [value, setValue] = useState<string>(props.value);
     const [currency, setCurrency] = useState<string>(props.currency);
-    const ref = useRef(null);
 
     const options = props.currencies.map((currency) => <option key={currency} value={currency}>{currency}</option>)
 
@@ -28,12 +27,6 @@ const CurrencyInput: React.FC<InputOwnProps> = (props) => {
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value)
     }
-    
-    if (document.activeElement === ref.current) {
-        console.log('aktywny')
-    } else {
-        console.log('nieaktywny')
-    }
 
     return <div className={`currency-input ${props.valid ? '' : 'warning'}`}>
         <input
@@ -41,7 +34,6 @@ const CurrencyInput: React.FC<InputOwnProps> = (props) => {
         type='text'
         onChange={handleInputChange}
         value={value}
-        ref={ref}
         />
         <select
         className='currency-select'

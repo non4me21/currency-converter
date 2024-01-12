@@ -19,7 +19,7 @@ const getData = async (value: string, fromCurrency: string, toCurency: string) =
   return response
 }
 
-const App = () => {
+const App: React.FC  = () => {
 
   const [fromData, setFromData] = useState<CurrencyData>({value: '1', currency: 'USD'});
   const [toData, setToData] = useState<CurrencyData>({value: '', currency: defaultToCurrency});
